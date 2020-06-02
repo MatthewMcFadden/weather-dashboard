@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding: 20px 35px;
+  background-color: #363f48;
+  text-align: center;
+}
+
+header h1{
+  font-weight: bold;
+  font-size: 2rem;
+  color: #ececec;
+}
