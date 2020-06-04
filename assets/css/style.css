@@ -19,3 +19,12 @@ header h1{
   font-size: 2rem;
   color: #ececec;
 }
+
+.search-text {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.city-name{
+  font-size: 32px;
+}
