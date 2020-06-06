@@ -20,6 +20,7 @@ So that I can plan a trip accordingly
 * When I click on a city in the search history then I am again presented with current and future conditions for that city.
 
 ### Link to the Application
-
+https://matthewmcfadden.github.io/weather-dashboard/
 
 ### Repository Link
+https://github.com/MatthewMcFadden/weather-dashboard.git
