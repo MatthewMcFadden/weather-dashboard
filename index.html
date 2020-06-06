@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- stylesheets from bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- stylesheets from bootstrap and cloudflare -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Weather Dashboard</title>
 </head>
 <body>
   <!-- Header -->
@@ -16,9 +16,9 @@
   </header>
 
   <!-- Main Container -->
-  <div class="container">
+  <section class="container">
     <div class="row">
-      <!-- Search Bar -->
+      <!-- Search City Section -->
       <div class="col-4 bg-light">
         <p class="search-text my-1">Search For a City</p>
         <div class="input-group mb-3">
@@ -29,16 +29,20 @@
             </button>
           </div>
         </div>
+        <!-- Clear Button -->
+        <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear History</button>
+        <form id="history"></form>
       </div>
 
       <!-- City Display -->
-      <div class="col-8">
+      <section class="col-8">
         <div class="row mr-0">
-          <div class="col-12 border border-dark m-3 rounded">
+          <div class="col-12 border m-3 rounded">
             <!-- City Name-->
             <div class="row">
               <div class="col-12">
-                <span id="city-name" class="city-name align-middle">City Name</span>
+                <span id="city-name" class="city-name align-middle"></span>
+                <img id="weather-pic" src="placeholder" alt="">
               </div>
             </div>
             <!-- Temperature -->
@@ -62,13 +66,13 @@
             <!-- UV index -->
             <div class="row">
               <div class="col-12">
-                <p id="humidity"></p>
+                <p id="UV-index"></p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 5 Day Forecast-->
+        <!-- 5 Day Forecast -->
         <div class="row">
           <div class="col-12">
             <h3>5-Day Forecast</h3>
