@@ -62,7 +62,6 @@
     let forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&appid=${APIKey}`;
     axios.get(forecastQueryURL)
     .then(function(response){
-
       // Parse response to display forecast for next 5 days underneath current conditions
       const forecastEls = document.querySelectorAll(".forecast");
       for (i=0; i<forecastEls.length; i++) {
@@ -74,20 +73,25 @@
           const forecastYear = forecastDate.getFullYear();
           const forecastDateEl = document.createElement("p");
         
+          // makes 5 day forecast HTML with styles and attributes
           forecastDateEl.setAttribute("class","mt-3 mb-0 forecast-date");
+          // adds forecast for future dates
           forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
           forecastEls[i].append(forecastDateEl);
           const forecastWeatherEl = document.createElement("img");
 
+          // create weather img
           forecastWeatherEl.setAttribute("src","https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
           forecastWeatherEl.setAttribute("alt",response.data.list[forecastIndex].weather[0].description);
           forecastEls[i].append(forecastWeatherEl);
           const forecastTempEl = document.createElement("p");
 
+          // temperature information
           forecastTempEl.innerHTML = "Temp: " + degree(response.data.list[forecastIndex].main.temp) + " &#176F";
           forecastEls[i].append(forecastTempEl);
           const forecastHumidityEl = document.createElement("p");
 
+          // humidity information
           forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
           forecastEls[i].append(forecastHumidityEl);
           }
@@ -95,6 +99,7 @@
     });  
   }
 
+  // search click event
   searchEl.addEventListener("click",function() {
     const searchTerm = inputEl.value;
 
@@ -102,8 +107,9 @@
     searchHistory.push(searchTerm);
     localStorage.setItem("search",JSON.stringify(searchHistory));
     renderSearchHistory();
-  })
+  }) 
 
+  // history click event
   clearEl.addEventListener("click",function() {
     searchHistory = [];
     renderSearchHistory();
